@@ -1,0 +1,89 @@
+#SCRAPING CAR DATA-------
+library(rvest)
+library(tidyverse)
+
+# This is how you get read the HTML into R
+url <- "https://www.honeycarsmart.com/index.php/full-inventory"
+html <- read_html(url)
+
+num_pages <- 20 #number of pages to scrape
+-----------------------------------------------------------------
+ # Extract the car price 
+all_prices <- list()
+
+for (i in 1:num_pages) { 
+  url <- paste0("https://www.honeycarsmart.com/index.php/full-inventory/page/", i)
+  page <- read_html(url)
+  data <- page %>% 
+    html_elements(".results") %>%
+    html_text2() 
+  all_prices[[i]] <- data
+}
+prices <- all_prices
+unlist(prices)
+
+# Clean up (unnecessary for now)
+prices <- 
+  str_remove_all(prices, "[^0-9]") |>  # Remove non-numeric characters
+  as.integer()
+-----------------------------------------------------------------
+all_brands <- list()
+
+for (i in 1:num_pages) { 
+  url <- paste0("https://www.honeycarsmart.com/index.php/full-inventory/page/", i)
+  page <- read_html(url)
+  data <- page %>% 
+    html_elements(".vehicle-name") %>%
+    html_text2() 
+  all_brands[[i]] <- data
+}
+brands <- all_brands
+brands <- unlist(all_brands)
+print(brands)
+------------------------------------------------------------------
+all_mileages <- list()
+
+for (i in 1:num_pages) { 
+  url <- paste0("https://www.honeycarsmart.com/index.php/full-inventory/page/", i)
+  page <- read_html(url)
+  data <- page %>% 
+    html_elements(".miles-style") %>%
+    html_text2() 
+  all_milages[[i]] <- data
+}
+
+mileages <- unlist(all_mileages)
+unlist(mileages)
+print(mileages)
+------------------------------------------------------------------
+all_colors <- list()
+  for (i in 1:num_pages) { 
+  url <- paste0("https://www.honeycarsmart.com/index.php/full-inventory/page/", i)
+  page <- read_html(url)
+  data <- page %>% 
+    html_elements(".mini-hide") %>%
+    html_text2()
+  all_colors[[i]] <- data
+}
+colors <- all_colors
+unlist(colors)
+-----------------------------------------------------------------
+remarks <- 
+  html |>
+  html_elements("div p .mt-3") |>
+  html_text2()
+
+remarks <- tail(remarks, length(prices))
+
+library(tidyverse)
+
+# Put it all in a data frame
+hsp_df <- tibble(
+  price = prices,
+  brands = brands,
+  mileages = mileages,
+  colors = colors,
+  remarks = remarks
+)
+
+

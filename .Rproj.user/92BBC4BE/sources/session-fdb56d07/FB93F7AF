@@ -1,0 +1,27 @@
+{
+    "id": "FB93F7AF",
+    "path": "~/GitHub/labs-grp-mathletes/car_bn.R",
+    "project_path": "car_bn.R",
+    "type": "r_source",
+    "hash": "484954265",
+    "contents": "",
+    "dirty": true,
+    "created": 1727422232034.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "tempName": "Untitled1",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "26,53",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1728027655,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1728371310201,
+    "read_only": false,
+    "read_only_alternatives": []
+}
