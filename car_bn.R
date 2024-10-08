@@ -1,44 +1,74 @@
+#SCRAPING CAR DATA-------
 library(rvest)
 library(tidyverse)
+
 # This is how you get read the HTML into R
-url <- "https://www.honeycarsmart.com/index.php/full-inventory/"
+url <- "https://www.honeycarsmart.com/index.php/full-inventory"
 html <- read_html(url)
 
-# Extract the car price
-prices <-
-  html |>
-  html_elements(".results") |>
-  html_text2() 
+num_pages <- 20 #number of pages to scrape
+-----------------------------------------------------------------
+  # Extract the car price 
+  all_prices <- list()
 
-# Clean up
+for (i in 1:num_pages) { 
+  url <- paste0("https://www.honeycarsmart.com/index.php/full-inventory/page/", i)
+  page <- read_html(url)
+  data <- page %>% 
+    html_elements(".results") %>%
+    html_text2() 
+  all_prices[[i]] <- data
+}
+prices <- all_prices
+unlist(prices)
+
+# Clean up (unnecessary for now)
 prices <- 
-  prices <- 
   str_remove_all(prices, "[^0-9]") |>  # Remove non-numeric characters
-  na_if("") |>                         # Replace empty strings with NA
-  as.integer()                         # Convert to integers
+  as.integer()
+-----------------------------------------------------------------
+  all_brands <- list()
 
-# Do same thing for number of brands, mileages, colors, and other remarks
-brands <-
-  html |>
-  html_elements(".vehicle-name") |>
-  html_text2() |>
-  as.character()
+for (i in 1:num_pages) { 
+  url <- paste0("https://www.honeycarsmart.com/index.php/full-inventory/page/", i)
+  page <- read_html(url)
+  data <- page %>% 
+    html_elements(".vehicle-name") %>%
+    html_text2() 
+  all_brands[[i]] <- data
+}
+brands <- all_brands
+brands <- unlist(all_brands)
+print(brands)
+------------------------------------------------------------------
+  all_mileages <- list()
 
-mileages <-
-     html |>
-     html_elements(".miles-style") |>
-     html_text2() |>
-     str_remove_all("[^0-9]") |> 
-    as.integer()
+for (i in 1:num_pages) { 
+  url <- paste0("https://www.honeycarsmart.com/index.php/full-inventory/page/", i)
+  page <- read_html(url)
+  data <- page %>% 
+    html_elements(".miles-style") %>%
+    html_text2() 
+  all_milages[[i]] <- data
+}
 
-colors <-
-  html |>
-  html_elements(".mini-hide") |>
-  html_text2()
-str_remove_all(colors, "[0-9]")
-str_trim(clean_colors)
-
-remarks <- 
+mileages <- unlist(all_mileages)
+unlist(mileages)
+print(mileages)
+------------------------------------------------------------------
+  all_colors <- list()
+for (i in 1:num_pages) { 
+  url <- paste0("https://www.honeycarsmart.com/index.php/full-inventory/page/", i)
+  page <- read_html(url)
+  data <- page %>% 
+    html_elements(".mini-hide") %>%
+    html_text2()
+  all_colors[[i]] <- data
+}
+colors <- all_colors
+unlist(colors)
+-----------------------------------------------------------------
+  remarks <- 
   html |>
   html_elements("div p .mt-3") |>
   html_text2()
@@ -55,3 +85,4 @@ hsp_df <- tibble(
   colors = colors,
   remarks = remarks
 )
+

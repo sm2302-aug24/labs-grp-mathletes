@@ -1,5 +1,4 @@
-#SCRAPING CAR DATA-------
-
+#SCRAPING CAR DATA-----------
 
 library(rvest)
 
@@ -8,6 +7,7 @@ url <- "https://www.honeycarsmart.com/index.php/full-inventory"
 html <- read_html(url)
 
 #number of pages to scrape
+
 num_pages <- 21
 all_data <- list()
 
@@ -19,6 +19,23 @@ for (i in 1:num_pages) {
   all_data[[i]] <- data
 }
 
+
+num_pages <- 20
+
+#-------------------------------------------------------------------------------
+
+all_prices <- list()
+
+for (i in 1:num_pages) { 
+  url <- paste0("https://www.honeycarsmart.com/index.php/full-inventory/page/", i)
+  page <- read_html(url)
+  data <- page %>% 
+  html_elements(".results") %>%
+  html_text2() 
+  all_data[[i]] <- data
+}
+ 
+
 combined_data <- unlist(all_data)
 print(combined_data)
 
@@ -28,13 +45,36 @@ prices <-
   html_elements(".results") |>
   html_text2() 
 
+
+library(tidyverse)
+
+
 # Clean up
 prices <- 
   str_remove_all(prices, "[^0-9]") |>  # Remove non-numeric characters
+
   na_if("") #Replace empty string with na
 as.integer()
 
-# Do same thing for number of brands, mileages, colors, and other remarks
+  as.integer()
+
+
+#--------------------------------------------------------------------------------
+all_brands <- list()
+  
+for (i in 1:num_pages) { 
+    url <- paste0("https://www.honeycarsmart.com/index.php/full-inventory/page/", i)
+    page <- read_html(url)
+    data <- page %>% 
+      html_elements(".vehicle-name") %>%
+      html_text2() 
+    all_brands[[i]] <- data
+  }
+  
+combined_data <- unlist(all_brands)
+print(combined_data)
+
+# Extract the car brand
 brands <-
   html |>
   html_elements(".vehicle-name") |>
@@ -42,25 +82,64 @@ brands <-
   as.character()
 
 
+
+#--------------------------------------------------------------------------------
+all_mileages <- list()
+
+for (i in 1:num_pages) { 
+  url <- paste0("https://www.honeycarsmart.com/index.php/full-inventory/page/", i)
+  page <- read_html(url)
+  data <- page %>% 
+    html_elements(".miles-style") %>%
+    html_text2() 
+  all_mileages[[i]] <- data
+}
+
+combined_data <- unlist(all_mileages)
+print(combined_data)
+
+# Extract the car mileages
 mileages <-
   html |>
   html_elements(".miles-style") |>
   html_text2() |>
-  as.integer()
-#smtg wrong
 
+  as.integer()
+
+  as.character()
+
+
+#--------------------------------------------------------------------------------
+all_colors <- list()
+
+for (i in 1:num_pages) { 
+  url <- paste0("https://www.honeycarsmart.com/index.php/full-inventory/page/", i)
+  page <- read_html(url)
+  data <- page %>% 
+    html_elements(".car-info :nth-child(1)") %>%
+    html_text2()
+    data <- str_remove_all(data, "\\d{4}") 
+  all_colors[[i]] <- data
+}
+
+combined_data <- unlist(all_colors)
+print(combined_data)
+
+# Extract the car colors
 colors <-
   html |>
-  html_elements(".mini-hide") |>
-  html_text2()
-str_remove_all(colors, "[0-9]")
+  html_elements(".car-info :nth-child(1)") |>
+  html_text2() 
 
+#--------------------------------------------------------------------------------
 remarks <- 
   html |>
   html_elements("div p .mt-3") |>
   html_text2()
 
 remarks <- tail(remarks, length(prices))
+
+#--------------------------------------------------------------------------------
 
 library(tidyverse)
 
