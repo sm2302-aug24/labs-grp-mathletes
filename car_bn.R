@@ -25,10 +25,11 @@ brands <-
   as.character()
 
 mileages <-
-  html |>
-  html_elements(".car-mileages") |>
-  html_text2() |>
-  as.integer()
+     html |>
+     html_elements(".miles-style") |>
+     html_text2() |>
+     str_remove_all("[^0-9]") |> 
+    as.integer()
 
 colors <-
   html |>

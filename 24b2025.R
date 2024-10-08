@@ -7,31 +7,47 @@ library(rvest)
 url <- "https://www.honeycarsmart.com/index.php/full-inventory"
 html <- read_html(url)
 
+#number of pages to scrape
+num_pages <- 21
+all_data <- list()
+
+for (i in 1:num_pages) { 
+  page <- read_html(url)
+  data <- page %>% 
+    html_nodes(".css-selector") %>%
+    html_text() 
+  all_data[[i]] <- data
+}
+
+combined_data <- unlist(all_data)
+print(combined_data)
+
 # Extract the car price
 prices <-
   html |>
   html_elements(".results") |>
-  html_text2()
+  html_text2() 
 
 # Clean up
 prices <- 
   str_remove_all(prices, "[^0-9]") |>  # Remove non-numeric characters
   na_if("") #Replace empty string with na
-  as.integer()
+as.integer()
 
 # Do same thing for number of brands, mileages, colors, and other remarks
 brands <-
   html |>
-  html_elements(".title-tag") |>
+  html_elements(".vehicle-name") |>
   html_text2() |>
-  as.integer()
-#smtg wrong
+  as.character()
+
 
 mileages <-
   html |>
   html_elements(".miles-style") |>
   html_text2() |>
   as.integer()
+#smtg wrong
 
 colors <-
   html |>
@@ -56,6 +72,3 @@ hsp_df <- tibble(
   colors = colors,
   remarks = remarks
 )
-
-
-
