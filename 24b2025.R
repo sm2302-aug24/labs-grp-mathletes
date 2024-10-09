@@ -1,7 +1,7 @@
 #SCRAPING CAR DATA-----------
 
-library(rvest)
 
+library(rvest)
 
 # This is how you get read the HTML into R
 url <- "https://www.honeycarsmart.com/index.php/full-inventory"
@@ -20,7 +20,6 @@ for (i in 1:num_pages) {
   all_data[[i]] <- data
 }
 
-
 num_pages <- 20
 
 #-------------------------------------------------------------------------------
@@ -35,33 +34,17 @@ for (i in 1:num_pages) {
   html_text2() 
   all_data[[i]] <- data
 }
- 
-
+ str_remove_all(prices, "[^0-9]") |>  # Remove non-numeric characters
+  str_remove_all("Monthly Payment: $") |>
+  str_remove_all("$")
+  as.integer()
+  
 combined_data <- unlist(all_data)
 print(combined_data)
 
-# Extract the car price
-prices <-
-  html |>
-  html_elements(".results") |>
-  html_text2() 
-
-
-library(tidyverse)
-
-
-# Clean up
-prices <- 
-  str_remove_all(prices, "[^0-9]") |>  # Remove non-numeric characters
-
-  na_if("") #Replace empty string with na
-as.integer()
-
-  as.integer()
-
-
 #--------------------------------------------------------------------------------
-all_brands <- list()
+
+  all_brands <- list()
   
 for (i in 1:num_pages) { 
     url <- paste0("https://www.honeycarsmart.com/index.php/full-inventory/page/", i)
@@ -71,7 +54,6 @@ for (i in 1:num_pages) {
       html_text2() 
     all_brands[[i]] <- data
   }
-  
 
 combined_data <- unlist(all_brands)
 print(combined_data)
@@ -82,11 +64,6 @@ brands <-
   html_elements(".vehicle-name") |>
   html_text2() |>
   as.character()
-
-
-
-
-#--------------------------------------------------------------------------------
 
 #-------------------------------------------------------------------------------
 
@@ -99,29 +76,18 @@ for (i in 1:num_pages) {
     html_elements(".miles-style") %>%
     html_text2() 
   all_mileages[[i]] <- data
-}
+} 
 
-combined_data <- unlist(all_mileages)
-print(combined_data)
-
-# Extract the car mileages
-mileages <-
-  html |>
-  html_elements(".miles-style") |>
-  html_text2() |>
-
-  as.integer()
-
-  as.character()
-
-
-# Clean up
-mileages <- 
   str_remove_all(mileages, " kms") |>  # Remove non-numeric characters
   str_remove_all( ",") |>  # Remove non-numeric characters
-
   as.integer()
-#--------------------------------------------------------------------------------
+
+mileages <- unlist(all_mileages)
+print(combined_data)
+
+
+#-------------------------------------------------------------------------------
+
 all_colors <- list()
 
 for (i in 1:num_pages) { 
@@ -144,6 +110,7 @@ colors <-
   html_text2() 
 
 #--------------------------------------------------------------------------------
+
 remarks <- 
   html |>
   html_elements("div p .mt-3") |>
