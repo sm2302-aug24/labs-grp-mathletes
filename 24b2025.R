@@ -1,6 +1,5 @@
 #SCRAPING CAR DATA-----------
 
-
 library(rvest)
 
 
@@ -9,6 +8,19 @@ url <- "https://www.honeycarsmart.com/index.php/full-inventory"
 html <- read_html(url)
 
 #number of pages to scrape
+
+num_pages <- 21
+all_data <- list()
+
+for (i in 1:num_pages) { 
+  page <- read_html(url)
+  data <- page %>% 
+    html_nodes(".css-selector") %>%
+    html_text() 
+  all_data[[i]] <- data
+}
+
+
 num_pages <- 20
 
 #-------------------------------------------------------------------------------
@@ -24,6 +36,7 @@ for (i in 1:num_pages) {
   all_data[[i]] <- data
 }
  
+
 combined_data <- unlist(all_data)
 print(combined_data)
 
@@ -33,12 +46,19 @@ prices <-
   html_elements(".results") |>
   html_text2() 
 
+
 library(tidyverse)
+
 
 # Clean up
 prices <- 
   str_remove_all(prices, "[^0-9]") |>  # Remove non-numeric characters
+
+  na_if("") #Replace empty string with na
+as.integer()
+
   as.integer()
+
 
 #--------------------------------------------------------------------------------
 all_brands <- list()
@@ -63,8 +83,12 @@ brands <-
   html_text2() |>
   as.character()
 
-#-------------------------------------------------------------------------------
 
+
+
+#--------------------------------------------------------------------------------
+
+#-------------------------------------------------------------------------------
 
 all_mileages <- list()
 
@@ -85,7 +109,11 @@ mileages <-
   html |>
   html_elements(".miles-style") |>
   html_text2() |>
+
+  as.integer()
+
   as.character()
+
 
 # Clean up
 mileages <- 
@@ -134,5 +162,9 @@ hsp_df <- tibble(
   mileages = mileages,
   colors = colors,
   remarks = remarks
+
 )
+
+
+
 
