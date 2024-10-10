@@ -8,45 +8,27 @@ url <- "https://www.honeycarsmart.com/index.php/full-inventory"
 html <- read_html(url)
 
 #number of pages to scrape
-
 num_pages <- 20
-all_data <- list()
-
-for (i in 1:num_pages) { 
-  page <- read_html(url)
-  data <- page %>% 
-    html_nodes(".css-selector") %>%
-    html_text() 
-  all_data[[i]] <- data
-}
-
 #-------------------------------------------------------------------------------
-
 all_prices <- list()
-
 for (i in 1:num_pages) { 
   url <- paste0("https://www.honeycarsmart.com/index.php/full-inventory/page/", i)
   page <- read_html(url)
-  data <- page %>% 
-  html_elements(".results") %>%
-  html_text2() 
+  data <- page %>%
+    html_elements(".results") %>%
+    html_text2() 
   all_prices[[i]] <- data
-} 
-all_prices %>%
- str_remove_all(all_prices, "[^0-9]") |>  # Remove non-numeric characters
-  str_remove_all("Monthly Payment: ") |>
-  str_remove_all("//$")
-  as.integer()
-
-prices <- unlist(all_prices)
-
-#ani yg sir add
+}
 # Notice that each element of this list contains two additional elements
 # ("Monthly payment: $" and $"$), which we want to remove.
 all_prices <- lapply(all_prices, function(x) x[grepl("^\\$\\d{1,3},\\d{3}$", x)])
 prices <- unlist(all_prices)
-#--------------------------------------------------------------------------------
 
+# Clean up
+prices <- 
+  str_remove_all(prices, "[^0-9]") |>  # Remove non-numeric characters
+  as.integer()
+#--------------------------------------------------------------------------------
 all_brands <- list()
   
 for (i in 1:num_pages) { 
@@ -77,7 +59,6 @@ for (i in 1:num_pages) {
   as.integer()
 
 mileages <- unlist(all_mileages)
-
 #-------------------------------------------------------------------------------
 
 all_colors <- list()
@@ -101,7 +82,3 @@ car_df <- tibble(
   mileages = mileages,
   colors = colors
 )
-
-
-
-
