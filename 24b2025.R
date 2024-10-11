@@ -1,4 +1,5 @@
-#SCRAPING CAR DATA-----------
+#1) SCRAPING CAR DATA-----------------------------------------------------------
+
 library(stringr)
 library(tidyverse)
 library(rvest)
@@ -28,7 +29,7 @@ prices <- unlist(all_prices)
 prices <- 
   str_remove_all(prices, "[^0-9]") |>  # Remove non-numeric characters
   as.integer()
-#--------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 all_brands <- list()
   
 for (i in 1:num_pages) { 
@@ -75,7 +76,9 @@ for (i in 1:num_pages) {
 }
 
 colors <- unlist(all_colors)
-#--------------------------------------------------------------------------------
+
+#-------------------------------------------------------------------------------
+
 # Put it all in a data frame
 car_df <- tibble(
   price = prices,
@@ -83,3 +86,7 @@ car_df <- tibble(
   mileages = mileages,
   colors = colors
 )
+
+#2) ANALYZE DATA----------------------------------------------------------------
+
+
