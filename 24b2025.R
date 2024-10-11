@@ -53,12 +53,13 @@ for (i in 1:num_pages) {
     html_text2() 
   all_mileages[[i]] <- data
 } 
+mileages <- unlist(all_mileages)
 
   str_remove_all(mileages, " kms") |>  # Remove non-numeric characters
   str_remove_all( ",") |>  # Remove non-numeric characters
   as.integer()
 
-mileages <- unlist(all_mileages)
+
 #-------------------------------------------------------------------------------
 
 all_colors <- list()
