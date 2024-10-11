@@ -27,7 +27,9 @@ prices <-
   str_remove_all(prices, "[^0-9]") |>  # Remove non-numeric characters
   as.integer()
 #--------------------------------------------------------------------------------
+# Initialize lists for brands and years
 all_brands <- list()
+all_years <- list()
 
 for (i in 1:num_pages) { 
   url <- paste0("https://www.honeycarsmart.com/index.php/full-inventory/page/", i)
@@ -35,9 +37,22 @@ for (i in 1:num_pages) {
   data <- page %>% 
     html_elements(".vehicle-name") %>%
     html_text2() 
-  all_brands[[i]] <- data
+  
+  # Extract years (4-digit numbers)
+  years <- str_extract(data, "\\b\\d{4}\\b")  # This captures the year
+  all_years[[i]] <- years
+  
+  # Remove the year from the brand names
+  brands <- str_remove(data, "\\b\\d{4}\\b")  # This removes the year
+  all_brands[[i]] <- str_trim(brands)  # Trim any extra spaces
 }
+
+# Unlist the results
 brands <- unlist(all_brands)
+years <- unlist(all_years)
+
+# Convert years to integer
+years <- as.integer(years)
 #-------------------------------------------------------------------------------
 
 all_mileages <- list()
@@ -75,9 +90,9 @@ colors <- unlist(all_colors)
     price = prices,
     brands = brands,
     mileages = mileages,
-    colors = colors
- )
-
+    colors = colors,
+    year = years
+    )
 #if you want to arrange
 arrange(.data = car_df, mileages)
 
@@ -94,6 +109,6 @@ arrange(.data = car_df, price)
 lm(price ~ mileages, data = car_df)
 lm(price ~ brands, data = car_df)
 
-#write_csv(car_df, file = "car_df.csv")
+write_csv(car_df, file = "car_df.csv")
 
 
