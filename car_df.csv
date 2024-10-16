@@ -1,198 +1,201 @@
-price,brands,mileages,colors,year
-18800,Volkswagen Tiguan,94058,Grey,2015
-16800,Suzuki Ignis GLX,127223,Black,2022
-21800,Nissan X-Trail,210351,White,2017
-15800,Mitsubishi Starwagon L300,76117,Silver,2016
-12800,Mitsubishi Mirage,152504,White,2019
-14800,Mitsubishi Lancer EX,201767,Grey,2013
-23800,Mini One,96602,Black,2015
-28800,Mini Cooper S Paceman,151478,Blue / White,2016
-24800,MG HS G.DEL,69054,Red,2022
-11800,MG 3 MCE3 Core,99962,Red,2019
-35800,Mercedes Benz E300,140583,Metallic,2014
-16800,Lexus IS300,219301,Silver,2006
-17800,Kia Rio GLS,118887,Red,2021
-12500,Kia Cerato Koup SX,260620,White,2011
-11800,Hyundai Veloster,216068,Red,2012
-14800,Hyundai Sonata YF GLS,235856,Red,2013
-18800,Hyundai Santa Fe CRDI,139195,Mocha,2015
-15800,Honda Stream,238784,White,2008
-19800,Honda Stepwagon,148680,Grey,2013
-29800,Honda Odyssey EXV,208218,Silver,2016
-19800,Honda HR-V LX,148106,White,2017
-35800,Toyota Hiace Super Long Commuter,216646,White,2015
-18800,Suzuki Vitara GL,143556,Blue / Black,2019
-14800,Daihatsu Terios,129813,Champagne,2012
-14800,Citroen DS4,145635,Black,2018
-14500,Citroen DS3,149829,Grey / White,2017
-28800,BMW 520i,174340,Silver,2015
-14800,Toyota Wigo,92580,Red,2020
-25800,Toyota Corolla Altis,130594,White,2017
-29800,Toyota Avanza Veloz,34156,Silver,2022
-9500,Suzuki Alto 800,81677,Blue,2020
-16800,Subaru XV,192437,Blue,2013
-19800,Skoda Octavia Ambition,69588,White,2020
-61800,Porsche Panamera S,88441,White,2014
-25800,Nissan NV350 Urvan Microbus,98344,Silver,2015
-17800,Nissan Elgrand,154704,White,2010
-18800,Nissan Elgrand,268274,Black,2011
-35800,Mercedes Benz ML250 CDI,156941,White,2015
-15800,Kia Rio,127236,Brown,2020
-11800,Kia Rio,192831,Red,2014
-19800,Kia Optima,111608,Silver,2015
-18800,Kia Cerato LX,70762,White,2019
-22800,Kia Cerato EX,53721,Gravity Grey,2021
-18500,Hyundai Creta GLS,111931,Red,2018
-13800,Honda Civic,215283,Metallic,2008
-24800,BMW X3,83778,Blue,2013
-25800,BMW X3,127232,Grey,2014
-25800,BMW 520i,97382,Blue,2014
-22800,BMW 316i,118228,Havana,2014
-23800,Volkswagen Scirocco GP R-Line,109722,White,2017
-22800,Toyota Camry XLE,139910,Black,2013
-16800,Suzuki Swift,198816,Red,2019
-23800,Suzuki Jimny GL,38045,Ivory / Black,2020
-19500,Subaru XV,126519,Blue,2015
-29800,Kia Grand Carnival,189859,Blue,2016
-23800,Kia Optima GT-Line,88131,Gray,2016
-19800,Volkswagen Tiguan,166893,Grey,2016
-35800,Toyota C-HR,75327,Black,2020
-14800,MG 3 MCE3,127021,Yellow,2020
-68800,Mercedes Benz GLC43 AMG,84483,White,2018
-18800,Mercedes Benz B200,143393,Blue,2012
-28800,Kia Sorento GT-Line,140710,Black,2018
-28800,Honda Civic VTIS-B,87909,Grey,2016
-59800,BMW M135i,86165,Grey,2021
-27800,Volkswagen Golf A7 GTI,143163,Silver,2015
-29800,Volkswagen Tiguan,85336,White,2019
-28800,Volkswagen Tiguan,123398,Black,2018
-33800,Volkswagen Golf A7 GTI,120099,Black,2017
-28800,Toyota Corolla Ascent,73096,Silver,2021
-12800,Suzuki S-Presso,35837,Blue,2021
-10800,Suzuki Celerio GLX,160189,Silver,2019
-27800,Skoda Octavia RS,53695,Black / Red,2020
-11800,Nissan Presage,153147,White,2008
-16800,Mitsubishi Lancer EX,156689,Red,2015
-19800,MG ZS,39193,Orange,2019
-49800,Mercedes Benz SLK200,75041,Grey Metallic,2016
-29800,Mercedes Benz GLA200,120251,Red,2015
-36800,Mercedes Benz E200 RHD,212907,Metallic,2016
-28800,Mercedes Benz A250 Sports RHD,79412,White,2013
-20800,Mazda CX-3,167204,White,2017
-21800,Lexus IS250,187114,Silver,2016
-12800,Hyundai Atos,53173,Silver,2021
-19800,Volkswagen Scirocco,214655,White,2014
-25800,Volkswagen Golf A7 GTI,187454,Black,2014
-14500,Volkswagen Golf A7,180386,White,2014
-33800,Toyota C-HR,91390,Red / Black,2020
-23800,Suzuki Swift Sport,105407,Blue,2020
-15800,Suzuki Swift,101873,Gray,2018
-15500,Suzuki Ertiga Dreza,158595,Gray,2016
-11500,Suzuki Alto 800,85024,Gray,2022
-9800,Suzuki Alto 800,103316,Blue,2021
-10500,Suzuki Alto 800,127422,Green,2021
-19800,Nissan Juke,132280,Gray,2018
-28800,Nissan Elgrand,287814,White,2013
-21800,Mitsubishi Pajero Sport,223021,Blue,2013
-17800,Mitsubishi Lancer EX GLS,113075,Silver,2018
-15500,Kia Sportage,224954,Mineral Silver,2014
-16800,Hyundai Verna GL MPI,87645,Gray,2021
-11800,Hyundai Atos,136051,Red,2020
-28800,Honda Odyssey EXV,209901,Red,2014
-19800,Volkswagen Scirocco GP,231431,Red,2014
-23800,Toyota Camry,207168,Silver,2014
-18500,Suzuki Swift,93749,Silver,2019
-7800,Mitsubishi Lancer GLX,214324,Black,2005
-19800,MG ZS,114006,Black,2020
-10800,Kia Rio,156819,Red,2013
-17500,Hyundai i40 GLS,140052,Black,2014
-10800,Hyundai Accent,162080,Red,2015
-28800,Honda Odyssey EXV,156412,Mauve,2014
-8500,Chevrolet Spark,168922,Silver,2016
-17800,BMW X1,142917,Red,2011
-18500,Volkswagen Golf A7,220744,Red,2018
-11800,Suzuki S-Presso,176285,Red,2020
-21800,Nissan X-Trail,262120,Titanium,2019
-9800,Mitsubishi Lancer EX,186285,White,2007
-23800,Mazda 3,95967,Grey,2019
-15800,Hyundai i40 GLS,181957,Silver Metallic,2013
-12500,Hyundai Grand i10,117724,White,2020
-9800,Suzuki Grand Vitara,413408,White,2008
-19800,Nissan X-Trail,206726,Gray,2015
-10800,Volkswagen Vento GP,176851,Red,2016
-15800,Volkswagen Jetta,73219,Grey,2016
-21800,Nissan Almera High CVT,108405,Black,2021
-12500,Ford EcoSport,NA,Midnight Sky,2016
-65800,Mini Cooper S Countryman - Untamed Edition,24525,Momentum Grey,2023
-24800,Mercedes Benz C180 CGI Classic,179938,Silver,2012
-20800,Mazda 8,162238,White,2015
-39800,Lexus RX450H,145084,Black,2015
-19800,Kia Cerato EX,160431,Red,2019
-15500,Kia Cerato EX,199873,Black,2015
-36800,BMW 420i Gran Coupe Sport,187494,Black,2015
-25000,BMW 218i Active Tourer,140830,Red,2016
-14800,Toyota Corolla Altis,146638,White,2014
-16800,Suzuki Swift,141957,Blue,2019
-11800,Suzuki S-Presso,59152,Orange,2020
-20800,MG ZS,59467,Black,2021
-19800,MG ZS,80895,Blue,2020
-58800,Mercedes Benz E300 AMG,95180,Black,2021
-18500,Mercedes Benz CLC180,138874,Silver,2010
-16500,Kia Sportage,255487,Sand,2015
-11800,Hyundai Tucson,291784,Gray,2010
-36800,BMW 320i,90919,Black,2018
-23800,Audi A4 TFSI Multitronic,135282,Grey,2013
-12500,Volkswagen Passat,272493,Silver,2014
-14500,Nissan Almera,104429,Silver,2017
-12800,Mitsubishi Attrage,149747,Silver,2016
-29800,Mercedes Benz GLA200,172982,Blue,2015
-36800,Lexus RX450H,142961,Black,2016
-22800,Kia Cerato EX,90564,Blue,2021
-11800,Volkswagen Vento GP,206038,White,2017
-26800,Volkswagen Touareg,167006,Brown,2012
-13500,Mitsubishi Mirage,102315,White,2019
-16500,Kia Cerato,153139,Brown,2017
-13800,Hyundai Veloster,240337,Orange,2013
-30800,Mercedes Benz GLA200,255854,Red,2016
-33800,Audi A6 TFSI Ultra S-Tronic,83461,Beige,2016
-16800,Volkswagen Beetle,141932,Black,2013
-19800,Hyundai Veloster GDI,136953,White,2019
-12800,Hyundai Atos,64710,Blue,2021
-15800,BMW 320i,185073,White,2009
-34800,Toyota C-HR,60366,Metallic,2020
-24800,Skoda Kamiq Ambition,31041,Blue,2022
-11500,Ford Fiesta Sport,150188,Blue,2016
-32800,Mini One,27498,Orange,2020
-20800,Mercedes Benz SLK230,139635,Yellow,1999
-14800,Toyota Camry,128976,Silver,2008
-23800,Nissan Juke Premium,13195,Red,2020
-48800,Mini Cooper S Clubman,57540,Red,2020
-42800,Mazda CX-9,111883,Blue,2018
-19800,Mazda CX-5,131209,Blue,2014
-20500,Kia Sportage,123524,Red,2017
-13500,Mitsubishi Mirage,40923,Orange,2019
-11500,Hyundai Atos,197804,Gray,2020
-33800,Mini Cooper S Coupe,127711,Red,2015
-15800,Kia Rio,114482,Red,2017
-22800,Mini Cooper S,46626,White,2012
-33800,Jeep Wrangler TJ,68245,Biege,2015
-16500,Suzuki Swift,158160,Silver,2018
-14800,Nissan Pulsar,215408,Gray,2014
-13800,Hyundai Accent,126095,White,2018
-12300,Citroen C3,121126,Black,2016
-18800,Volkswagen Scirocco,181240,Black,2013
-10800,Kia Sportage,223003,Green,2009
-11300,Hyundai Grand i10,79287,White,2019
-23800,Dodge Journey,164389,Red,2017
-24800,BMW 740Li,92817,Black,2009
-28800,Lexus LS460,123440,Black,2007
-28800,BMW 520i,133796,Grey,2015
-22800,Audi Q5,202619,Silver,2013
-12500,Hyundai Sonata,276715,Silver,2011
-10800,Volkswagen Vento,167286,White,2016
-21800,Toyota Avensis,152034,White,2016
-11300,Hyundai Grand i10,86450,Silver,2019
-14800,Mazda 2,152132,Black,2016
-11800,Nissan Almera,125520,Black,2014
-17800,Toyota Rav4,176398,White,2008
-28800,BMW 528i,125803,Grey,2013
+price,brands,mileages,colors,year,continental
+23800,Nissan X-Trail,109596,Brown,2021,
+26800,Nissan Elgrand,105380,White,2015,
+42800,Nissan Elgrand,110414,Black,2019,
+25800,Mitsubishi Xpander Cross,47771,Orange,2021,
+24800,MG HS LUX,59953,White,2022,
+13800,MG 3 MCE3,97895,White,2020,
+33800,Mercedes Benz E250 RHD,54830,Red,2014,
+12500,Mazda 6,260118,Black,2012,
+25800,Mazda 3,87719,Red,2020,
+54800,Lexus IS300,88495,Titanium,2021,
+49800,Kia Stinger T-GDI,67843,Blue,2022,
+26800,Kia Sorento EX,104552,Grey,2019,
+21800,Kia Cerato GT-Line,107582,Red,2019,
+22800,Hyundai Tucson GL,151229,Red,2019,
+19800,Hyundai Kona T-GDI,113774,Red,2019,
+21800,Honda HR-V LX,97039,White,2019,
+23800,Ford Ranger,161543,Red,2012,
+18800,Volkswagen Tiguan,94058,Grey,2015,
+16800,Suzuki Ignis GLX,127223,Black,2022,
+21800,Nissan X-Trail,210351,White,2017,
+15800,Mitsubishi Starwagon L300,76117,Silver,2016,
+12800,Mitsubishi Mirage,152504,White,2019,
+14800,Mitsubishi Lancer EX,201767,Grey,2013,
+23800,Mini One,96602,Black,2015,
+28800,Mini Cooper S Paceman,151478,Blue / White,2016,
+24800,MG HS G.DEL,69054,Red,2022,
+11800,MG 3 MCE3 Core,99962,Red,2019,
+35800,Mercedes Benz E300,140583,Metallic,2014,
+16800,Lexus IS300,219301,Silver,2006,
+17800,Kia Rio GLS,118887,Red,2021,
+12500,Kia Cerato Koup SX,260620,White,2011,
+11800,Hyundai Veloster,216068,Red,2012,
+13800,Hyundai Sonata YF GLS,235856,Red,2013,
+18800,Hyundai Santa Fe CRDI,139195,Mocha,2015,
+15800,Honda Stream,238784,White,2008,
+19800,Honda Stepwagon,148680,Grey,2013,
+29800,Honda Odyssey EXV,208218,Silver,2016,
+19800,Honda HR-V LX,148106,White,2017,
+35800,Toyota Hiace Super Long Commuter,216646,White,2015,
+18800,Suzuki Vitara GL,143556,Blue / Black,2019,
+14800,Daihatsu Terios,129813,Champagne,2012,
+14800,Citroen DS4,145635,Black,2018,
+14500,Citroen DS3,149829,Grey / White,2017,
+28800,BMW 520i,174340,Silver,2015,
+14800,Toyota Wigo,92580,Red,2020,
+25800,Toyota Corolla Altis,130594,White,2017,
+29800,Toyota Avanza Veloz,34156,Silver,2022,
+8800,Suzuki Alto 800,81677,Blue,2020,
+16800,Subaru XV,192437,Blue,2013,
+18800,Skoda Octavia Ambition,69588,White,2020,
+61800,Porsche Panamera S,88441,White,2014,
+25800,Nissan NV350 Urvan Microbus,98344,Silver,2015,
+17800,Nissan Elgrand,154704,White,2010,
+18800,Nissan Elgrand,268274,Black,2011,
+35800,Mercedes Benz ML250 CDI,156941,White,2015,
+15800,Kia Rio,127236,Brown,2020,
+11800,Kia Rio,192831,Red,2014,
+19800,Kia Optima,111608,Silver,2015,
+17800,Kia Cerato LX,70762,White,2019,
+22800,Kia Cerato EX,53721,Gravity Grey,2021,
+18500,Hyundai Creta GLS,111931,Red,2018,
+13800,Honda Civic,215283,Metallic,2008,
+24800,BMW X3,83778,Blue,2013,
+25800,BMW X3,127232,Grey,2014,
+25800,BMW 520i,97382,Blue,2014,
+22800,BMW 316i,118228,Havana,2014,
+23800,Volkswagen Scirocco GP R-Line,109722,White,2017,
+22800,Toyota Camry XLE,139910,Black,2013,
+16800,Suzuki Swift,198816,Red,2019,
+23800,Suzuki Jimny GL,38045,Ivory / Black,2020,
+19500,Subaru XV,126519,Blue,2015,
+29800,Kia Grand Carnival,189859,Blue,2016,
+23800,Kia Optima GT-Line,88131,Gray,2016,
+19800,Volkswagen Tiguan,166893,Grey,2016,
+35800,Toyota C-HR,75327,Black,2020,
+14800,MG 3 MCE3,127021,Yellow,2020,
+68800,Mercedes Benz GLC43 AMG,84483,White,2018,
+18800,Mercedes Benz B200,143393,Blue,2012,
+28800,Kia Sorento GT-Line,140710,Black,2018,
+28800,Honda Civic VTIS-B,87909,Grey,2016,
+59800,BMW M135i,86165,Grey,2021,
+27800,Volkswagen Golf A7 GTI,143163,Silver,2015,
+29800,Volkswagen Tiguan,85336,White,2019,
+28800,Volkswagen Tiguan,123398,Black,2018,
+33800,Volkswagen Golf A7 GTI,120099,Black,2017,
+28800,Toyota Corolla Ascent,73096,Silver,2021,
+12800,Suzuki S-Presso,35837,Blue,2021,
+10800,Suzuki Celerio GLX,160189,Silver,2019,
+25800,Skoda Octavia RS,53695,Black / Red,2020,
+11800,Nissan Presage,153147,White,2008,
+16800,Mitsubishi Lancer EX,156689,Red,2015,
+19800,MG ZS,39193,Orange,2019,
+49800,Mercedes Benz SLK200,75041,Grey Metallic,2016,
+29800,Mercedes Benz GLA200,120696,Red,2015,
+36800,Mercedes Benz E200 RHD,212907,Metallic,2016,
+28800,Mercedes Benz A250 Sports RHD,79412,White,2013,
+20800,Mazda CX-3,167204,White,2017,
+21800,Lexus IS250,187114,Silver,2016,
+11800,Hyundai Atos,53173,Silver,2021,
+19800,Volkswagen Scirocco,214655,White,2014,
+25800,Volkswagen Golf A7 GTI,187454,Black,2014,
+14500,Volkswagen Golf A7,180386,White,2014,
+33800,Toyota C-HR,91390,Red / Black,2020,
+23800,Suzuki Swift Sport,105407,Blue,2020,
+15800,Suzuki Swift,101873,Gray,2018,
+15500,Suzuki Ertiga Dreza,158595,Gray,2016,
+10800,Suzuki Alto 800,85024,Gray,2022,
+9800,Suzuki Alto 800,103316,Blue,2021,
+9800,Suzuki Alto 800,127422,Green,2021,
+18500,Nissan Juke,132280,Gray,2018,
+28800,Nissan Elgrand,287814,White,2013,
+21800,Mitsubishi Pajero Sport,223021,Blue,2013,
+17800,Mitsubishi Lancer EX GLS,113075,Silver,2018,
+14500,Kia Sportage,224954,Mineral Silver,2014,
+16800,Hyundai Verna GL MPI,87645,Gray,2021,
+10800,Hyundai Atos,136051,Red,2020,
+28800,Honda Odyssey EXV,209901,Red,2014,
+19800,Volkswagen Scirocco GP,231431,Red,2014,
+23800,Toyota Camry,207168,Silver,2014,
+18500,Suzuki Swift,93749,Silver,2019,
+7800,Mitsubishi Lancer GLX,214324,Black,2005,
+19800,MG ZS,114006,Black,2020,
+10800,Kia Rio,156819,Red,2013,
+17500,Hyundai i40 GLS,140052,Black,2014,
+10800,Hyundai Accent,162080,Red,2015,
+28800,Honda Odyssey EXV,156412,Mauve,2014,
+8500,Chevrolet Spark,168922,Silver,2016,
+17800,BMW X1,142917,Red,2011,
+18500,Volkswagen Golf A7,220744,Red,2018,
+11800,Suzuki S-Presso,176285,Red,2020,
+21800,Nissan X-Trail,262120,Titanium,2019,
+9800,Mitsubishi Lancer EX,186285,White,2007,
+23800,Mazda 3,95967,Grey,2019,
+15800,Hyundai i40 GLS,181957,Silver Metallic,2013,
+11500,Hyundai Grand i10,117724,White,2020,
+9800,Suzuki Grand Vitara,413408,White,2008,
+19800,Nissan X-Trail,206726,Gray,2015,
+10800,Volkswagen Vento GP,176851,Red,2016,
+15800,Volkswagen Jetta,73219,Grey,2016,
+21800,Nissan Almera High CVT,108405,Black,2021,
+12500,Ford EcoSport,NA,Midnight Sky,2016,
+65800,Mini Cooper S Countryman - Untamed Edition,24525,Momentum Grey,2023,
+24800,Mercedes Benz C180 CGI Classic,179938,Silver,2012,
+20800,Mazda 8,162238,White,2015,
+39800,Lexus RX450H,145084,Black,2015,
+19800,Kia Cerato EX,160431,Red,2019,
+14500,Kia Cerato EX,199873,Black,2015,
+36800,BMW 420i Gran Coupe Sport,187494,Black,2015,
+25000,BMW 218i Active Tourer,140830,Red,2016,
+14800,Toyota Corolla Altis,146638,White,2014,
+16800,Suzuki Swift,141957,Blue,2019,
+11800,Suzuki S-Presso,59152,Orange,2020,
+20800,MG ZS,59467,Black,2021,
+19800,MG ZS,80895,Blue,2020,
+58800,Mercedes Benz E300 AMG,95180,Black,2021,
+18500,Mercedes Benz CLC180,138874,Silver,2010,
+15500,Kia Sportage,255487,Sand,2015,
+11800,Hyundai Tucson,291784,Gray,2010,
+32800,BMW 320i,90919,Black,2018,
+20800,Audi A4 TFSI Multitronic,135282,Grey,2013,
+12500,Volkswagen Passat,272493,Silver,2014,
+14500,Nissan Almera,104429,Silver,2017,
+12800,Mitsubishi Attrage,149747,Silver,2016,
+29800,Mercedes Benz GLA200,172982,Blue,2015,
+36800,Lexus RX450H,142961,Black,2016,
+22800,Kia Cerato EX,90564,Blue,2021,
+11800,Volkswagen Vento GP,206038,White,2017,
+24800,Volkswagen Touareg,167006,Brown,2012,
+13500,Mitsubishi Mirage,102315,White,2019,
+15500,Kia Cerato,153139,Brown,2017,
+13800,Hyundai Veloster,240337,Orange,2013,
+30800,Mercedes Benz GLA200,255854,Red,2016,
+33800,Audi A6 TFSI Ultra S-Tronic,83461,Beige,2016,
+16800,Volkswagen Beetle,141932,Black,2013,
+19800,Hyundai Veloster GDI,136953,White,2019,
+11800,Hyundai Atos,64710,Blue,2021,
+15800,BMW 320i,185073,White,2009,
+34800,Toyota C-HR,60366,Metallic,2020,
+24800,Skoda Kamiq Ambition,31041,Blue,2022,
+11500,Ford Fiesta Sport,150188,Blue,2016,
+32800,Mini One,27498,Orange,2020,
+20800,Mercedes Benz SLK230,139635,Yellow,1999,
+14800,Toyota Camry,128976,Silver,2008,
+22800,Nissan Juke Premium,13195,Red,2020,
+48800,Mini Cooper S Clubman,57540,Red,2020,
+38500,Mazda CX-9,111883,Blue,2018,
+19800,Mazda CX-5,131209,Blue,2014,
+18800,Kia Sportage,123524,Red,2017,
+13500,Mitsubishi Mirage,40923,Orange,2019,
+10500,Hyundai Atos,197804,Gray,2020,
+33800,Mini Cooper S Coupe,127711,Red,2015,
+15800,Kia Rio,114482,Red,2017,
+22800,Mini Cooper S,46626,White,2012,
+33800,Jeep Wrangler TJ,68245,Biege,2015,
+16500,Suzuki Swift,158160,Silver,2018,
+14800,Nissan Pulsar,215408,Gray,2014,
+13800,Hyundai Accent,126095,White,2018,
+11800,Citroen C3,121126,Black,2016,
+18800,Volkswagen Scirocco,181240,Black,2013,
+10800,Kia Sportage,223003,Green,2009,

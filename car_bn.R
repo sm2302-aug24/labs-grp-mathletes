@@ -93,22 +93,22 @@ colors <- unlist(all_colors)
     colors = colors,
     year = years
     )
+
+write_csv(car_df, file = "car_df.csv")
+#---------------------------------------------------------------------
+
+
+#objective
+#The latest the car, the expensive
+#The higher the mileage the more expensive the car is
+
+#Linear regression predicting price based on mileage, brands and colors
+lm(price ~ mileages, data = car_df)
+lm(price ~ brands, data = car_df)
+
 #if you want to arrange
 arrange(.data = car_df, mileages)
 
 arrange(.data = car_df, brands)
 
 arrange(.data = car_df, price)
-
-#objective
-#The latest the car, the expensive
-#The higher the mileage the more expensive the car is
-
-#---------------------------------------------------------------------
-#Linear regression predicting price based on mileage, brands and colors
-lm(price ~ mileages, data = car_df)
-lm(price ~ brands, data = car_df)
-
-write_csv(car_df, file = "car_df.csv")
-
-
