@@ -89,4 +89,27 @@ car_df <- tibble(
 
 #2) ANALYZE DATA----------------------------------------------------------------
 
-oawifjwei
+
+library(readxl)
+car_df <- read_excel("car_df.xlsx")
+
+#Objective 1 -> The latest the car, the more expensive the car is
+
+
+
+
+#objective 2 -> The lower the mileage, the expensive the car is
+
+
+
+
+#objective 3 -> 
+
+
+
+
+
+
+
+
+
