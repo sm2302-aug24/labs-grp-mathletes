@@ -96,6 +96,11 @@ colors <- unlist(all_colors)
 
 write_csv(car_df, file = "car_df.csv")
 #---------------------------------------------------------------------
+#
+car_df <- read_excel("car_df.xlsx")
+
+
+
 
 
 #objective
