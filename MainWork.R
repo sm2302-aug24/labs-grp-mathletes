@@ -92,18 +92,19 @@ car_df <- tibble(
 
 library(readxl)
 car_df <- read_excel("car_df.xlsx")
+library(readxl)
 
-#Objective 1 -> The latest the car, the more expensive the car is
-
-
-
-
-#objective 2 -> The lower the mileage, the expensive the car is
+#objective 1 -> The latest the car, the more expensive it is.
 
 
 
 
-#objective 3 -> 
+#objective 2 -> The lower the mileage, the more expensive the car is.
+
+
+
+
+#objective 3 -> The origin of the car can influence the price.
 
 
 
