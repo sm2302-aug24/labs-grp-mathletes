@@ -30,18 +30,32 @@ prices <-
   str_remove_all(prices, "[^0-9]") |>  # Remove non-numeric characters
   as.integer()
 #-------------------------------------------------------------------------------
+# Initialize lists for brands and years
 all_brands <- list()
-  
-for (i in 1:num_pages) { 
-    url <- paste0("https://www.honeycarsmart.com/index.php/full-inventory/page/", i)
-    page <- read_html(url)
-    data <- page %>% 
-      html_elements(".vehicle-name") %>%
-      html_text2() 
-    all_brands[[i]] <- data
-  }
+all_years <- list()
 
+for (i in 1:num_pages) { 
+  url <- paste0("https://www.honeycarsmart.com/index.php/full-inventory/page/", i)
+  page <- read_html(url)
+  data <- page %>% 
+    html_elements(".vehicle-name") %>%
+    html_text2() 
+  
+  # Extract years (4-digit numbers)
+  years <- str_extract(data, "\\b\\d{4}\\b")  # This captures the year
+  all_years[[i]] <- years
+  
+  # Remove the year from the brand names
+  brands <- str_remove(data, "\\b\\d{4}\\b")  # This removes the year
+  all_brands[[i]] <- str_trim(brands)  # Trim any extra spaces
+}
+
+# Unlist the results
 brands <- unlist(all_brands)
+years <- unlist(all_years)
+
+# Convert years to integer
+years <- as.integer(years)
 #-------------------------------------------------------------------------------
 
 all_mileages <- list()
@@ -92,19 +106,30 @@ car_df <- tibble(
 
 library(readxl)
 car_df <- read_excel("car_df.xlsx")
-library(readxl)
+continent <- car_df$CONTINENT
+#continent is manually inserted.
 
 #objective 1 -> The latest the car, the more expensive it is.
 
 
-
+model_1 <- lm(prices ~ years, data = car_df)
 
 #objective 2 -> The lower the mileage, the more expensive the car is.
 
 
+model_2 <- lm(prices ~ mileages, data = car_df)
 
 
 #objective 3 -> The origin of the car can influence the price.
+
+
+model_3 <- lm(prices ~ continent, data = car_df)
+
+
+#3) GGPLOT----------------------------------------------------------------------
+
+
+
 
 
 
