@@ -99,10 +99,6 @@ write_csv(car_df, file = "car_df.csv")
 #
 car_df <- read_excel("car_df.xlsx")
 
-
-
-
-
 #objective
 #The latest the car, the expensive
 #The higher the mileage the more expensive the car is
