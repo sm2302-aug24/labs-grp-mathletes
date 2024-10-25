@@ -105,7 +105,8 @@ car_df <- tibble(
 
 
 library(readxl)
-car_df <- read_excel("car_df.xlsx")
+car_df <- read_excel("car_df.xlsx") |>
+  mutate(mileage = as.numeric(`MILEAGE (kms)`))
 continent <- car_df$CONTINENT
 #continent is manually inserted.
 
@@ -127,6 +128,40 @@ model_3 <- lm(prices ~ continent, data = car_df)
 
 
 #3) GGPLOT----------------------------------------------------------------------
+
+#model_1
+
+
+
+#model_2
+
+library(ggplot2)
+
+ggplot(car_df, aes(x = mileage,
+                   y = `PRICE($)`))+
+  
+  geom_point(colour= "red") +
+  
+  geom_smooth(method= "lm",
+              se= FALSE,
+              colour = "blue")+
+  labs(
+    title = "MODEL_2",
+    subtitle = paste("MILEAGES & PRICES"),
+    x = "MILEAGES(kms)",
+    y = "PRICES($)"
+  )
+  
+
+
+#model_3
+
+
+ggplot(car_df,aes(y= `PRICE($)`,
+                  x = CONTINENT)
+)+
+  geom_boxplot(colour = "red")
+
 
 
 
