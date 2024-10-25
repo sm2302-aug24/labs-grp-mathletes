@@ -160,7 +160,8 @@ ggplot(car_df, aes(x = mileage,
 ggplot(car_df,aes(y= `PRICE($)`,
                   x = CONTINENT)
 )+
-  geom_boxplot(colour = "red")
+  geom_boxplot(colour = "red")+
+theme_minimal()
 
 
 
