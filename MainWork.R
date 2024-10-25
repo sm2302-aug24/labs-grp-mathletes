@@ -103,7 +103,6 @@ car_df <- tibble(
 
 #2) ANALYZE DATA----------------------------------------------------------------
 
-
 library(readxl)
 car_df <- read_excel("car_df.xlsx") |>
   mutate(mileage = as.numeric(`MILEAGE (kms)`))
@@ -129,13 +128,24 @@ model_3 <- lm(prices ~ continent, data = car_df)
 
 #3) GGPLOT----------------------------------------------------------------------
 
-#model_1
-
-
-
-#model_2
-
 library(ggplot2)
+
+#model_1 -> Scatter plot for prices vs years
+
+
+ggplot(car_df, aes(x = years, y = prices)) +
+  geom_point(color = "blue") +
+  geom_smooth(method = "lm", 
+              color = "red", 
+              se = FALSE) +
+  labs(title = "Car Price vs Year",
+       x = "Year of Car",
+       y = "Price") +
+  theme_minimal()
+
+
+#model_2 -> Scatter plot for prices vs mileages
+
 
 ggplot(car_df, aes(x = mileage,
                    y = `PRICE($)`))+
@@ -153,14 +163,14 @@ ggplot(car_df, aes(x = mileage,
   )
   
 
-
-#model_3
+#model_3 -> Box plot for prices vs continents
 
 
 ggplot(car_df,aes(y= `PRICE($)`,
-                  x = CONTINENT)
+                  x = CONTINENT, 
+                  fill = CONTINENT)
 )+
-  geom_boxplot(colour = "red")+
+  geom_boxplot(colour = "black")+
 theme_minimal()
 
 
