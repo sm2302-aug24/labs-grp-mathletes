@@ -138,10 +138,10 @@ ggplot(car_df, aes(x = years, y = prices)) +
   geom_smooth(method = "lm", 
               color = "red", 
               se = FALSE) +
-  labs(title = "Car Price vs Year",
+  labs(title = "MODEL 1" ,
+       subtitle = "Car Price vs Year",
        x = "Year of Car",
-       y = "Price") +
-  theme_minimal()
+       y = "Price($)") 
 
 
 #model_2 -> Scatter plot for prices vs mileages
@@ -156,10 +156,10 @@ ggplot(car_df, aes(x = mileage,
               se= FALSE,
               colour = "blue")+
   labs(
-    title = "MODEL_2",
-    subtitle = paste("MILEAGES & PRICES"),
-    x = "MILEAGES(kms)",
-    y = "PRICES($)"
+    title = "MODEL 2",
+    subtitle = paste("Car Price vs Mileage"),
+    x = "Mileage(kms)",
+    y = "Price($)"
   )
   
 
@@ -169,6 +169,11 @@ ggplot(car_df, aes(x = mileage,
 ggplot(car_df,aes(y= `PRICE($)`,
                   x = CONTINENT, 
                   fill = CONTINENT)
+)+   labs(
+  title = "MODEL 3",
+  subtitle = paste("Car Price vs Continent"),
+  x = "Continent",
+  y = "Price($)"
 )+
   geom_boxplot(colour = "black")+
 theme_minimal()
