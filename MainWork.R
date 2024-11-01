@@ -1,4 +1,15 @@
-#1) SCRAPING CAR DATA-----------------------------------------------------------
+
+#1) Objectives------------------------------------------------------------------
+
+
+#objective 1 -> The latest the car, the more expensive it is.
+
+#objective 2 -> The lower the mileage, the more expensive the car is.
+
+#objective 3 -> The origin of the car can influence the price.
+
+
+#2) SCRAPING CAR DATA-----------------------------------------------------------
 
 library(stringr)
 library(tidyverse)
@@ -101,7 +112,7 @@ car_df <- tibble(
   colors = colors
 )
 
-#2) ANALYZE DATA----------------------------------------------------------------
+#3) ANALYZE DATA----------------------------------------------------------------
 
 library(readxl)
 car_df <- read_excel("car_df.xlsx") |>
@@ -126,7 +137,7 @@ model_2 <- lm(prices ~ mileages, data = car_df)
 model_3 <- lm(prices ~ continent, data = car_df)
 
 
-#3) GGPLOT----------------------------------------------------------------------
+#4) GGPLOT----------------------------------------------------------------------
 
 library(ggplot2)
 
@@ -161,7 +172,57 @@ ggplot(car_df, aes(x = mileage,
     x = "Mileage(kms)",
     y = "Price($)"
   )
+ #----------
+
+ggplot(car_df,aes(x= mileage,
+                    y =prices,
+                    col=continent)) +
+  geom_point(
+  )+
+  facet_grid(continent~ .
+             )+
+  geom_smooth(method= "lm",
+              se= FALSE,
+              fullrange= TRUE,
+              colour = "black"
+  )+ 
   
+  labs(
+    title = "MODEL 2",
+    subtitle = paste("Car Price vs Mileage"),
+    x = "Mileage(kms)",
+    y = "Price($)"
+  )
+
+#---------------
+
+library(ggplot2)
+
+# Ensure that continent is a factor (optional but good practice)
+car_df$continent <- as.factor(car_df$continent)
+
+ggplot(car_df, aes(x = mileage, 
+                   y = prices, 
+                   col = continent)
+       ) +
+  
+  geom_point(size = 2, alpha = 0.7) + # Adjusted size and transparency
+  facet_grid(continent ~ .) +
+  geom_smooth(aes(group = continent), 
+              method = "lm", 
+              se = FALSE, 
+              fullrange = TRUE, 
+              color = "black") +
+  labs(
+    title = "MODEL 2: Car Price vs Mileage",
+    subtitle = "Analysis by Continent",
+    x = "Mileage (kms)",
+    y = "Price ($)"
+  ) +
+  theme_minimal() +  # Changed theme for better aesthetics
+  theme(legend.position = "bottom")  # Legend positioning
+
+
 
 #model_3 -> Box plot for prices vs continents
 
