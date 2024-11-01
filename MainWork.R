@@ -116,7 +116,7 @@ car_df <- tibble(
 
 library(readxl)
 car_df <- read_excel("car_df.xlsx") |>
-  mutate(mileage = as.numeric(`MILEAGE (kms)`))
+  mutate(mileages = as.numeric(`MILEAGE (kms)`))
 continent <- car_df$CONTINENT
 #continent is manually inserted.
 
@@ -153,12 +153,33 @@ ggplot(car_df, aes(x = years, y = prices)) +
        subtitle = "Car Price vs Year",
        x = "Year of Car",
        y = "Price($)") 
+#--------
 
+ggplot(car_df,aes(x= years,
+                  y =prices,
+                  col=continent)) +
+  geom_point(
+  )+
+  geom_smooth(method= "lm",
+              se= FALSE,
+              fullrange= TRUE,
+              colour = "black"
+  )+ facet_grid(CONTINENT~ .)+
+  
+  labs(
+    title = "MODEL 1",
+    subtitle = paste("Car Price vs Year"),
+    x = "Year",
+    y = "Price($)"
+  )
 
 #model_2 -> Scatter plot for prices vs mileages
+car_df <- read_excel("car_df.xlsx") |>
+  mutate(mileages = as.numeric(`MILEAGE (kms)`))
+continent <- car_df$CONTINENT
+mileages <- car_df$mileages
 
-
-ggplot(car_df, aes(x = mileage,
+ggplot(car_df, aes(x = mileages,
                    y = `PRICE($)`))+
   
   geom_point(colour= "red") +
@@ -174,18 +195,16 @@ ggplot(car_df, aes(x = mileage,
   )
  #----------
 
-ggplot(car_df,aes(x= mileage,
+ggplot(car_df,aes(x= mileages,
                     y =prices,
                     col=continent)) +
   geom_point(
   )+
-  facet_grid(continent~ .
-             )+
   geom_smooth(method= "lm",
               se= FALSE,
               fullrange= TRUE,
               colour = "black"
-  )+ 
+  )+ facet_grid(CONTINENT~ .)+
   
   labs(
     title = "MODEL 2",
@@ -193,34 +212,6 @@ ggplot(car_df,aes(x= mileage,
     x = "Mileage(kms)",
     y = "Price($)"
   )
-
-#---------------
-
-library(ggplot2)
-
-# Ensure that continent is a factor (optional but good practice)
-car_df$continent <- as.factor(car_df$continent)
-
-ggplot(car_df, aes(x = mileage, 
-                   y = prices, 
-                   col = continent)
-       ) +
-  
-  geom_point(size = 2, alpha = 0.7) + # Adjusted size and transparency
-  facet_grid(continent ~ .) +
-  geom_smooth(aes(group = continent), 
-              method = "lm", 
-              se = FALSE, 
-              fullrange = TRUE, 
-              color = "black") +
-  labs(
-    title = "MODEL 2: Car Price vs Mileage",
-    subtitle = "Analysis by Continent",
-    x = "Mileage (kms)",
-    y = "Price ($)"
-  ) +
-  theme_minimal() +  # Changed theme for better aesthetics
-  theme(legend.position = "bottom")  # Legend positioning
 
 
 
