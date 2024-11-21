@@ -144,17 +144,6 @@ library(ggplot2)
 #model_1 -> Scatter plot for prices vs years
 
 
-ggplot(car_df, aes(x = years, y = prices)) +
-  geom_point(color = "blue") +
-  geom_smooth(method = "lm", 
-              color = "red", 
-              se = FALSE) +
-  labs(title = "MODEL 1" ,
-       subtitle = "Car Price vs Year",
-       x = "Year of Car",
-       y = "Price($)") 
-#--------
-
 ggplot(car_df,aes(x= years,
                   y =prices,
                   col=continent)) +
@@ -173,27 +162,14 @@ ggplot(car_df,aes(x= years,
     y = "Price($)"
   )
 
+
 #model_2 -> Scatter plot for prices vs mileages
+
+
 car_df <- read_excel("car_df.xlsx") |>
   mutate(mileages = as.numeric(`MILEAGE (kms)`))
 continent <- car_df$CONTINENT
 mileages <- car_df$mileages
-
-ggplot(car_df, aes(x = mileages,
-                   y = `PRICE($)`))+
-  
-  geom_point(colour= "red") +
-  
-  geom_smooth(method= "lm",
-              se= FALSE,
-              colour = "blue")+
-  labs(
-    title = "MODEL 2",
-    subtitle = paste("Car Price vs Mileage"),
-    x = "Mileage(kms)",
-    y = "Price($)"
-  )
- #----------
 
 ggplot(car_df,aes(x= mileages,
                     y =prices,
@@ -212,7 +188,6 @@ ggplot(car_df,aes(x= mileages,
     x = "Mileage(kms)",
     y = "Price($)"
   )
-
 
 
 #model_3 -> Box plot for prices vs continents
